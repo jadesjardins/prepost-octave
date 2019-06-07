@@ -45,7 +45,7 @@ title: Setup
 <div id="TigerVNC"> {% comment %} Start of 'tigervnc' section. {% endcomment %}
   <h3>TigerVNC</h3>
   <p>
-    TigerVNC is an application that enable Virtual Networ Computing (VNC) graphical connections to remote servers. It is free and available for Linux, Mac and Windows with installation instructions at the Compute Canada wiki <a href="https://docs.computecanada.ca/wiki/VNC">VNC page</a>.
+    TigerVNC is an application that enable Virtual Network Computing (VNC) graphical connections to remote servers. It is free and available for Linux, Mac and Windows with installation instructions at the Compute Canada wiki <a href="https://docs.computecanada.ca/wiki/VNC">VNC page</a>.
   </p>
 </div> {% comment %} End of 'tigervnc' section. {% endcomment %}
 
