@@ -21,7 +21,7 @@ keypoints:
 
 #### **EEGLAB is a set of Matlab functions (... which are text files).**
 
-Before we get profiling code performance let’s take a look at how the functions operate in the Octave environment. Octave is and interpreted language. This means that it will read some text, interpret it in a very specific way and then ask the cpu(s) to perform the operations that are defined by the text.
+Before we get profiling code performance lets take a look at how the functions operate in the Octave environment. Octave is and interpreted language. This means that it will read some text, interpret it in a very specific way and then ask the cpu(s) to perform the operations that are defined by the text.
 
 For our purposes we can think of Octave doing two very important things:
 1. it stores information in memory as different kinds of variables
@@ -61,7 +61,7 @@ x=[1:10];
 ~~~
 {: .source}
 
-Once variables exist in the Workspace we can index into them using brackets:
+Once variables exist in the Workspace we can index into them using brakets:
 ~~~
 x(5)
 ~~~
@@ -119,7 +119,7 @@ figure;plot(x);
 ![Octave simple plot]({{ page.root }}/fig/oct_plot.png)
 
 #### **Common flow operation in Octave**
-Beyond performing operations on arrays Octave contains many of the flow operation typical to programming languages. These flow operations control the sequential operation of a series of commands. Here we describe the Octave venacular for some of the flow language that we will use later in our function development.
+Beyond performing operations on arrays Octave contains many of the flow operation typical to programming languages. These flow operations control the squential operation of a series of comands. Here we describe the Octave venacular for some of the flow language that we will use later in our function development.
 
 #### ***"if" statements***
 "Conditional" flow allows you to have code that will only operate if specified conditions are true.
@@ -142,7 +142,7 @@ true
 {: .callout}
 
 #### ***"catch" control***
-Sometimes there are states in functions that can cause errors resulting in the termination of the process. Sometimes these error states should be allowed to exist, but rather than exiting the function the code should just perform a different section of code. The "try - catch" flow allow for error conditions to exist in code and rather than exiting the function a different part of the function is executed before continuing.
+Sometimes there are states in functions that can cause errors resulting in the termination of the process. Sometimes these error states should be allowed to exist, but rather than exiting the function the code should just perform a dirrent section of code. The "try - catch" flow allow for error conditions to exist in code and rather than exiting the function a differnet part of the function is executed before continuing.
  
 ~~~
 try junk;
@@ -156,12 +156,12 @@ end
 not ok
 ~~~
 {: .output}
-> ## "try" captures errors and executes the "catch" block before continuing on.
+> ## "try" captures erros and exectutes the "catch" block before continuing on.
 > What happens if you simple type call "junk" at the command line? what about if you repeat this "try - catch" example after "junk=1"?
 {: .callout}
 
 #### ***"for" loop***
-In programming we frequently want to do something over and over and over and over.. again while changing some parameters on each iteration. This can be accomplished in most (all?) programming languages with "for" loops. The way to state a for loop in Octave is as follows.
+In programming we frequently want to do something over and over and over and over.. again while changing some parameters on each itteration. This can be accomplished in most (all?) programming languages with "for" loops. The way to state a for loop in Octave is as follows.
 
 ~~~
 for i=1:10;
@@ -184,4 +184,3 @@ now on number: 10
 {: .output}
 
 ... where "i" is variable that contains the collection "1:10". The code between the "for" statement and "end" statement is executed for each item in the "collection".
-
