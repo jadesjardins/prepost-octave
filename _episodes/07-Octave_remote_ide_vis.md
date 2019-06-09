@@ -133,7 +133,7 @@ figure;surf(double(squeeze(diff_outdata(:,:,1))),'linestyle','none');
 ![gra-vdi surface diff]({{ page.root }}/fig/vnc_gra-vdi_surf_diff.png)
 
 > ## Don't forget to logout when you are done!!
-> Remember that this is a shared system that is available to all Compute Canada members. Leaving idle sesisons connected reduces the availablility of the resource to others! Simply use the top menu items System > Log out...
+> Remember that this is a shared system that is available to all Compute Canada members. Leaving idle sessions connected reduces the availability of the resource to others! Simply use the top menu items System > Log out...
 {: .callout}
 
 {% include links.md %}
