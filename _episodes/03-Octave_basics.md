@@ -19,9 +19,7 @@ keypoints:
 
 ## The basics of working with data in Octave
 
-#### **EEGLAB is a set of Matlab functions (... which are text files).**
-
-Before we get profiling code performance lets take a look at how the functions operate in the Octave environment. Octave is and interpreted language. This means that it will read some text, interpret it in a very specific way and then ask the cpu(s) to perform the operations that are defined by the text.
+Before we get to profiling code performance lets take a look at how the functions operate in the Octave environment. Octave is and interpreted language. This means that it will read some text, interpret it in a very specific way and then ask the cpu(s) to perform the operations that are defined by the text.
 
 For our purposes we can think of Octave doing two very important things:
 1. it stores information in memory as different kinds of variables
