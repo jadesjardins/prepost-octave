@@ -13,6 +13,9 @@ keypoints:
 - "VNC connections to the gra-vdi node are great for interactive development and visualization"
 ---
 
+At this point we have optimised our code to the poin that we sould start testing at larger scales. In order to do this we need to find out if the code that we developed on our local machine will run properly on the remote cluster. A convenient way of doing this is by running the Octave IDE on the cluster via the gra-vdi node using a VNC client.
+
+![Resources and tools]({{ page.root }}/fig/resource_tools.png)
 
 Prepare the directory to send to the remote file system via the gra-dtn1 node
 ~~~
