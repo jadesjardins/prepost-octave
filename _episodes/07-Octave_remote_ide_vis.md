@@ -13,11 +13,11 @@ keypoints:
 - "VNC connections to the gra-vdi node are great for interactive development and visualization"
 ---
 
-At this point we have optimised our code to the poin that we sould start testing at larger scales. In order to do this we need to find out if the code that we developed on our local machine will run properly on the remote cluster. A convenient way of doing this is by running the Octave IDE on the cluster via the gra-vdi node using a VNC client.
+At this point we have optimised our code to the point that we could start testing at larger scales. In order to do this we need to find out if the code that we developed on our local machine will run properly on the remote cluster. A convenient way of doing this is by running the Octave IDE on the cluster via the gra-vdi node using a VNC client.
 
 ![Resources and tools]({{ page.root }}/fig/resource_tools.png)
 
-Prepare the directory to send to the remote file system via the gra-dtn1 node
+Before we get started with accessing the remote system for interactive usage let's send our demo folder over to the Graham /home file system. We should start by Preparing the directory to send to the remote file system via the gra-dtn1 node
 ~~~
 cd ~/Desktop/snss_2019
 ls -l
@@ -27,13 +27,14 @@ rm -rf SNSS_2019_Octave/.git
 ~~~
 {: .source}
 
-Use scp to perform the transfer
+Then use scp to perform the transfer.
 ~~~
 scp -r SNSS_2019_Octave jdesjard@gra-dtn1.computecanada.ca:/home/jdesjard
 ~~~
 {: .source}
 
-launch the VNC viewer and direct it toward the gra-vdi node
+Now that our demo data files on the Graham /home file system we can start accessing the system to replicate the work that we have been doing locally. Let's launch the VNC viewer and direct it toward the gra-vdi node.
+
 ~~~
 vncviewer
 ~~~
@@ -42,13 +43,18 @@ vncviewer
 ![vncviewer parameters]({{ page.root }}/fig/vnc_param.png)
 
 
-Enter guest credentials at the gra-vdi login...
+Once that the VNC client application reaches the target node it will bring up the node's login page and we can enter out Compute Canada credentials
+.
 ![gra-vdi login]({{ page.root }}/fig/vnc_gra-vdi_login.png)
 
-
+Once logged into the gra-vdi node we will see an intuitive desktop environment. we can use the top menu to access various resources.
 ![gra-vdi desktop]({{ page.root }}/fig/vnc_gra-vdi_desktop.png)
 
+Click on the terminal icon in the gra-vdi desktop top menu to launch a new terminal that we will to start setting up our environment.
+
 ![gra-vdi term]({{ page.root }}/fig/vnc_gra-vdi_term.png)
+
+The first thing that we want to do now that we have control of our environments on the gra-vdi node is to set up our software environment. In particular we want to be able to load Octave and run it interactively here. We can control what software is loaded in our environment on Graham using modules. The Nix modules allows us to install specific versions of software in our environment, specifically, the Nix installations of Octave are optimized for interactive use. Let's start by loading the the Nix module.
 
 ~~~
 module load nix
@@ -67,9 +73,11 @@ $ nix-channel --update
 
 This is safe as it can always be undone by running
 
-$ nix-channel --rollback 
+$ nix-channel --rollback
 ~~~
 {: .output}
+
+Now lets see what versions of Octave Nix has available for installation.
 
 ~~~
 nix search octave
@@ -81,25 +89,30 @@ warning: using cached results; pass '-u' to update the cache
 Attribute name: nixpkgs.octave
 Package name: octave
 Version: 4.2.2
-Description: 
+Description:
 
 Attribute name: nixpkgs.octaveHg
 Package name: octave
 Version: 4.3.0pre23269
-Description: 
+Description:
 
 Attribute name: nixpkgs.octaveFull
 Package name: octave
 Version: 4.2.2
-Description: 
+Description:
 ~~~
 {: .output}
+
+
+Octave can be installed with several different configurations, many of which are designed to suppress graphical interaction. Let's install the nixpkgs.octaveFull version which includes the full Octave IDE for interactive usage.
 
 ~~~
 nix-env --install --attr nixpkgs.octaveFull
 ~~~
 {: .source}
 
+Once that the installation is complete we can start Octave on gra-vdi by calling it at the terminal prompt.
+ 
 ~~~
 octave
 ~~~
@@ -107,6 +120,9 @@ octave
 
 ![gra-vdi octave]({{ page.root }}/fig/vnc_gra-vdi_octave.png)
 
+At this point it is a matter of using the gra-vdi instance of Octave to replicate the work that we were doing locally.
+
+Let's use the Octave IDE Command Window to replicate some of the work that we did earlier.
 ~~~
 cd ~/SNSS_2019_Octave
 ~~~
@@ -140,6 +156,8 @@ figure;surf(double(squeeze(diff_outdata(:,:,1))),'linestyle','none');
 {: .callout}
 
 {% include links.md %}
+
+
 
 
 
