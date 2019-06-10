@@ -1,5 +1,5 @@
 ---
-title: "Running Octave batch jobs"
+title: "Exploring job output from an SSHFS mount to the local machine"
 teaching: 0
 exercises: 0
 questions:
